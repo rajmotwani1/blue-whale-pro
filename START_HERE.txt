@@ -1,0 +1,41 @@
+BLUE WHALE PRO — START HERE
+===========================
+
+PACKAGE CONTENTS
+- app.py            Main Streamlit application
+- requirements.txt Python packages required to run the app
+- README.md        Setup and deployment instructions
+
+RUN LOCALLY (WINDOWS)
+1. Install Python 3.10 or newer.
+2. Extract this ZIP into a folder.
+3. Open Command Prompt in that folder.
+4. Run:
+      py -m venv .venv
+      .venv\\Scripts\\activate
+      pip install -r requirements.txt
+5. Create a folder named .streamlit in the project folder.
+6. Inside .streamlit, create a file named secrets.toml with this content:
+      APP_PASSWORD = "choose-your-own-password"
+   Replace the example text with your own password. Do not share it.
+7. Start the app:
+      streamlit run app.py
+8. Open the local URL shown in the terminal (usually http://localhost:8501).
+
+DEPLOY ON STREAMLIT COMMUNITY CLOUD
+1. Upload app.py and requirements.txt to the root of your GitHub repository.
+2. Create/deploy a Streamlit app using that repository and set the main file path to app.py.
+3. In Streamlit Cloud: App -> Settings -> Secrets, add:
+      APP_PASSWORD = "choose-your-own-password"
+4. Save and reboot the app.
+
+IMPORTANT
+- Never upload secrets.toml to a public GitHub repository.
+- Do not share your APP_PASSWORD in chat or screenshots.
+- No exchange API key is needed. The app reads public market data only and does not place trades.
+- Markets: Binance Spot, Bybit Spot, Bybit Perpetual.
+- Timeframes: 30m, 1h, 2h, 3h, 4h, 1d.
+- Bybit 3h candles are aggregated from 1h candles.
+- Alerts display Entry Price, 4H POC, Daily POC, Weekly POC, and alert time (UTC/IST).
+- Stop Loss and targets are not included.
+- Bybit uses api.bybit.com only. There is no automatic fallback to api.bytick.com. If the primary endpoint is blocked by the hosting provider/network, Bybit scans will fail; check the Data/API errors panel.
