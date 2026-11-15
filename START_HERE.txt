@@ -1,0 +1,33 @@
+BLUE WHALE PRO — CRYPTO SPOT (FREE TEST)
+
+What this package does
+- Reads public Binance Spot market data. No API key is required.
+- Watchlist starts with 10 major USDT pairs:
+  BTC, ETH, BNB, XRP, SOL, DOGE, ADA, TRX, LINK, AVAX.
+- Scans 30m, 1h, 2h, 3h and 4h.
+- Uses the custom Blue Whale POC formula from your supplied Pine Script:
+  (previous HTF high + previous HTF low + previous HTF close + current HTF open) / 4
+- Shows BUY/SELL, entry, stop loss and 4H/Daily/Weekly POC.
+
+Run it on Windows
+1. Install Python 3.11 or newer from https://www.python.org/downloads/
+   During setup, tick "Add Python to PATH".
+2. Open the extracted folder.
+3. Click the folder address bar, type CMD, press Enter.
+4. In the black window, type:
+   py -m pip install -r requirements.txt
+5. Then type:
+   py -m streamlit run app.py
+6. Browser opens automatically. Choose coins/timeframes on the left and press Run scanner.
+
+If 'py' is not recognized, try replacing 'py' with 'python'.
+
+Important limitations
+- This is a local testing dashboard, not a public/deployed website yet.
+- It does not place orders.
+- The default 10 coins are a starter watchlist, not a live market-cap ranking.
+- It uses the user's custom POC calculation, not exchange-reported whale activity or
+  volume-profile POC.
+- Signals are evaluated on closed candles only. Verify logic and results before relying on them.
+- Binance public market-data endpoints may be unavailable in some regions/networks.
+- No password/login is included in this local testing build.
